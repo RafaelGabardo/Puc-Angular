@@ -1,0 +1,14 @@
+<main>
+    <div class="container ">
+      <h4>Cadastro de Usuários</h4>
+      <div class="mb-3 ">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" [formControl]="nome">
+      </div>
+      <div class="mb-3 ">
+        <label for="senha" class="form-label ">Senha</label>
+        <input type="password" class="form-control " id="senha" [formControl]="senha">
+      </div>
+      <button class="btn btn-primary" (click)="salvar">Salvar</button>
+    </div>
+  </main>
