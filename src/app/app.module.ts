@@ -11,10 +11,13 @@ import { ListaUsuarioComponent } from './lista-usuario/lista-usuario.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from './environment/environment';
+import { PaginaProdutoComponent } from './pagina-produto/pagina-produto.component';
+import { PaginaUsuarioComponent } from './pagina-usuario/pagina-usuario.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +30,15 @@ import { environment } from './environment/environment';
     ProdutoComponent,
     UsuarioComponent,
     LoginComponent,
+    PaginaProdutoComponent,
+    PaginaUsuarioComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration()

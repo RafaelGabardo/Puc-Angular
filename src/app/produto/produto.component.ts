@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Form, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProdutoService } from './service/produto.service';
 import { ActivatedRoute } from '@angular/router';
 import { ProdutoModel } from './model/produto.model';
@@ -13,23 +13,22 @@ import { Console } from 'node:console';
 })
 export class ProdutoComponent {
 
+  constructor(private produtoService: ProdutoService, 
+    private router: ActivatedRoute,
+    private builder: FormBuilder
+  ) { }
+
   showSuccessMessages = false;
   showErrorMessages = false;
 
   key?: string;
 
-  formGroup = new FormGroup({
-    nome: new FormControl('',
-      [Validators.required]),
-    preco: new FormControl('', 
-      [Validators.required, Validators.min(5.1), 
-        Validators.
-        pattern('^[0-9]+(\.[0-9]{1,2})?$')])
+  formGroup = this.builder.group({
+    nome: ['', [Validators.required]],
+    preco: ['', [Validators.required, Validators.min(5.1),
+      Validators.pattern('^[0-9]+(\.[0-9]{1,2})?$')
+    ]]
   });
-
-  constructor(private produtoService: ProdutoService, 
-    private router: ActivatedRoute
-  ) { }
 
   ngOnInit(): void {
     this.router.paramMap.subscribe(paramMap => {
