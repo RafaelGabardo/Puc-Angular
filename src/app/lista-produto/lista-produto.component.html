@@ -12,10 +12,12 @@
         <tbody>
           <tr *ngFor="let produto of produtos;">
             <th scope="row">{{produto.key}}</th>
-            <td>{{produto.Nome}}</td>
-            <td>R$3000</td>
-            <td><button class="btn btn-warning" (click)="editar(produto.key)">Editar</button> &nbsp;
-              <button class="btn btn-danger" (click)="excluir(produto.key)">Excluir</button></td>
+            <td>{{produto.nome}}</td>
+            <td>{{produto.preco}}</td>
+            <td>
+              <button class="btn btn-warning" (click)="editar(produto.key)">Editar</button> &nbsp;
+              <button class="btn btn-danger" (click)="excluir(produto.key)">Excluir</button>
+            </td>
           </tr>
         </tbody>
     </table>

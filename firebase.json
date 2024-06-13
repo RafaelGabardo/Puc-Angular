@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "puc-ang",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "us-central1"
+      }
+    }
+  ]
+}

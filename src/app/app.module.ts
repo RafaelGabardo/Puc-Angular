@@ -18,6 +18,9 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from './environment/environment';
 import { PaginaProdutoComponent } from './pagina-produto/pagina-produto.component';
 import { PaginaUsuarioComponent } from './pagina-usuario/pagina-usuario.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { PaginaUsuarioComponent } from './pagina-usuario/pagina-usuario.componen
     ReactiveFormsModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideFirebaseApp(() => initializeApp({"projectId":"puc-ang","appId":"1:899759114167:web:a04c10a472953138a40a32","databaseURL":"https://puc-ang-default-rtdb.firebaseio.com","storageBucket":"puc-ang.appspot.com","apiKey":"AIzaSyCyFl_GK2IG0Nt5Q2UFTw9jo8VJZ6PdExo","authDomain":"puc-ang.firebaseapp.com","messagingSenderId":"899759114167"})),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase())
   ],
   bootstrap: [AppComponent]
 })
