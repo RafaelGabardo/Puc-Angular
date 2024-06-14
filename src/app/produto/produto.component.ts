@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Form, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Form, FormBuilder, Validators } from '@angular/forms';
 import { ProdutoService } from './service/produto.service';
 import { ActivatedRoute } from '@angular/router';
 import { ProdutoModel } from './model/produto.model';
@@ -26,7 +26,7 @@ export class ProdutoComponent {
   formGroup = this.builder.group({
     nome: ['', [Validators.required]],
     preco: ['', [Validators.required, Validators.min(5.1),
-      Validators.pattern('^[0-9]+(\.[0-9]{1,2})?$')
+      Validators.pattern(/^[0-9]+(\.[0-9]{1,2})?$/)
     ]]
   });
 

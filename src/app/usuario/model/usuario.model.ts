@@ -1,4 +1,4 @@
-export class ProdutoModel {
+export class UsuarioModel {
   key?: number;
   nome?: string;
   preco?: number;    

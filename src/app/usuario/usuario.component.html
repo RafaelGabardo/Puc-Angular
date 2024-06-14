@@ -1,14 +1,22 @@
-<!-- <main>
+<main>
   <div class="container ">
     <h4>Cadastro de Usuários</h4>
-    <div class="mb-3 ">
-      <label for="nome" class="form-label">Nome</label>
-      <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" [formControl]="nome">
-    </div>
-    <div class="mb-3 ">
-      <label for="senha" class="form-label ">Senha</label>
-      <input type="password" class="form-control " id="senha" [formControl]="senha">
-    </div>
-    <button class="btn btn-primary" (click)="salvar">Salvar</button>
+    <form [formGroup]="formGroup" action="#">
+      <div class="mb-3 ">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" 
+        placeholder="Digite seu nome" 
+        formControlName="nome">
+        <div class="invalid-feedback" [style.display]="formGroup.controls.nome.invalid 
+          && formGroup.controls.nome.touched ? 'block' : 'none'">
+          Digite o nome corretamente.
+        </div>
+      </div>
+      <div class="mb-3 ">
+        <label for="senha" class="form-label ">Senha</label>
+        <input type="password" class="form-control" id="senha" formControlName="senha">
+      </div>
+      <button class="btn btn-primary" (click)="salvar()">Cadastrar</button>
+    </form>
   </div>
-</main> -->
+</main>
