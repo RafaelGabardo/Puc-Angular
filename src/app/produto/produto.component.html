@@ -1,0 +1,32 @@
+<main>
+  <div class="container ">
+    <div *ngIf="showSuccessMessages" class="alert alert-success" role="alert">
+      Produto cadastrado com sucesso!
+    </div>
+    <div *ngIf="showErrorMessages" class="alert alert-danger" role="alert">
+      Erro ao cadastrar produto!
+    </div>
+  
+    <h4>Cadastro de Produtos</h4>
+  
+    <form [formGroup]="formGroup" action="#">
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="email" class="form-control" id="nome" 
+        placeholder="Digite o nome" 
+        formControlName="nome">
+        <div class="invalid-feedback" [style.display]="formGroup.controls.nome.invalid 
+          && formGroup.controls.nome.touched ? 'block' : 'none'">
+          Digite o nome corretamente.
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="preco" class="form-label">Preço</label>
+        <input type="text" class="form-control" id="preco" placeholder="0,00" formControlName="preco">
+      </div>
+  
+      <button class="btn btn-primary" (click)="salvar()">Salvar</button>
+    </form>
+  </div>
+</main>

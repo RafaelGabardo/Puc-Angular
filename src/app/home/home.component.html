@@ -1,0 +1,16 @@
+<main>
+  <div class="container ">
+    <table class="table">
+      <thead>
+        <tr *ngFor="let produto of produtos">
+          <th scope="col">{{produto.nome}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let produto of produtos">
+          <td scope="row">{{produto.preco}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>

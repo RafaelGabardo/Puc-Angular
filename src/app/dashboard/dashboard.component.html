@@ -1,0 +1,30 @@
+<main>
+  <div class="container ">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Produtos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let produto of produtos">
+          <th scope="row">{{produto.key}}</th>
+          <td>{{produto.nome}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Usuários</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <th scope="row">{{usuario.key}}</th>
+          <td>{{usuario.nome}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
