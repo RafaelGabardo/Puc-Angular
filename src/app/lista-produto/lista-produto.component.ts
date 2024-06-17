@@ -12,8 +12,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ListaProdutoComponent implements OnInit {
   public produtos: any;
 
-  constructor(private produtoService: ProdutoService,
-    private router: Router) { }
+  constructor(
+    private produtoService: ProdutoService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.produtoService.listar().subscribe(produtos => {
@@ -30,6 +32,6 @@ export class ListaProdutoComponent implements OnInit {
   }
 
   editar(key: any) {
-    this.router.navigate(['/layout/produto/'+key]);
+    this.router.navigate(['/layout/cadastro-produto/'+key]);
   }
 }

@@ -9,20 +9,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Cleiton</td>
-                <td><button class="btn btn-warning">Editar</button></td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Leonardo</td>
-                <td><button class="btn btn-warning">Editar</button></td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Bruna</td>
-                <td><button class="btn btn-warning">Editar</button></td>
+            <tr *ngFor="let usuario of usuarios">
+                <th scope="row">{{usuario.key}}</th>
+                <td>{{usuario.nome}}</td>
+                <td>
+                    <button class="btn btn-warning" (click)="editar(usuario.key)">Editar</button> &nbsp;
+                    <button class="btn btn-danger" (click)="excluir(usuario.key)">Excluir</button>
+                </td>
             </tr>
         </tbody>
       </table>
