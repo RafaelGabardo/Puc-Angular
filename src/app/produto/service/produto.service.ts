@@ -8,8 +8,10 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root'
 })
 export class ProdutoService {
-  constructor(private db: AngularFireDatabase,
-    private storage: AngularFireStorage) { }
+  constructor(
+    private db: AngularFireDatabase,
+    private storage: AngularFireStorage
+  ) { }
 
   salvar(produto: ProdutoModel) { 
     return this.db.list('produto').push(produto);   

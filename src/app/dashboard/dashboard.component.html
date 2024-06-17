@@ -1,67 +1,30 @@
-<head>
-  <link rel="stylesheet" href="dashboard.component.css">
-</head>
 <main>
   <div class="container ">
-    <div class="row ">
-      <div class="card-group  ">
-        <div class="col-2 ">
-          <div class="card ">
-            <div class="card-header ">
-              <h3 class="h3 ">Vendas</h3>
-            </div>
-            <div class="card-body ">
-              <p class="card-text ">300</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-8 ">
-          <div class="card ">
-            <div class="card-header ">
-              <h3 class="h3 ">Gráfico</h3>
-            </div>
-            <div class="card-body ">
-              <img class="card-img " src="../../assets/Imagens/grafico-coluna-cke.png" alt="Gráfico">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row ">
-      <div class="card-group ">
-        <div class="col-3 ">
-          <div class="card ">
-            <div class="card-header ">
-              <h3 class="h3 ">Clientes</h3>
-            </div>
-            <div class="card-body ">
-              <p class="card-text ">120</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-7 ">
-          <div class="card ">
-            <div class="card-header ">
-              <h3 class="h3 ">Gráfico</h3>
-            </div>
-            <div class="card-body ">
-              <img class="card-img " src="../../assets/Imagens/grafico-coluna-cke.png" alt="grafico">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row ">
-      <div class="col-10 ">
-        <div class="card ">
-          <div class="card-header ">
-            <h3 class="h3 ">Gráfico Geral</h3>
-          </div>
-          <div class="card-body ">
-            <img class="card-img " src="../../assets/Imagens/grafico-coluna-cke.png" alt="Gráfico">
-          </div>
-        </div>
-      </div>
-    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Produtos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let produto of produtos">
+          <th scope="row">{{produto.key}}</th>
+          <td>{{produto.nome}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Usuários</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <th scope="row">{{usuario.key}}</th>
+          <td>{{usuario.nome}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </main>
